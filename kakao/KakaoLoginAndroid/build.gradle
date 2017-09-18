@@ -5,11 +5,11 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta5'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'com.google.gms:google-services:3.0.0'
+        classpath 'com.google.gms:google-services:3.1.0'
 //        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
@@ -17,7 +17,8 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/'}
+        maven { url 'https://maven.google.com' }
     }
 }
 

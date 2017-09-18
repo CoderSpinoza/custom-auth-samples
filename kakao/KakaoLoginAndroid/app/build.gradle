@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "com.google.firebase.auth.kakao"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -19,6 +19,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
     dataBinding {
         enabled = true
@@ -26,15 +31,20 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
 
     compile 'com.android.volley:volley:1.0.0'
 
     compile 'com.github.bumptech.glide:glide:3.7.0'
 
-    compile "com.kakao.sdk:usermgmt:${project.KAKAO_SDK_VERSION}"
-    compile 'com.google.firebase:firebase-core:10.2.0'
-    compile 'com.google.firebase:firebase-auth:10.2.0'
+    compile "com.kakao.sdk:usermgmt:1.5.1"
+    compile "com.facebook.android:facebook-android-sdk:4.26.0"
+
+    compile 'com.google.firebase:firebase-core:11.2.2'
+    compile 'com.google.firebase:firebase-auth:11.2.2'
+
+    compile 'com.google.android.gms:play-services-auth:11.2.2'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
